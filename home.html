@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelter | Home Page</title>
+    <link rel="icon" href="./img/logo-books.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="light">
+    <header id="header mt-4">
+      <div class="container mt-4 justify-content-center d-flex">
+        <a href="index.html" class="logo-link"><img src="svg/logo.svg" alt="logo" /></a>
+        <input type="text" class="search-input form-control rounded-5" placeholder="   Search books" />
+        <button class="mode btn"><img src="svg/sun.svg" alt="sune" /></button>
+        <button class="btn btn-primary logout">Logout</button>
+      </div>
+    </header>
+    <div class="mb-4 mt-2 container d-flex result">
+      <p class="count p-2" style="margin-left: 360px">Showing <span class="counter">y</span> Result(s)</p>
+      <button class="btn btn-secondary ms-auto sort-btn" value="no">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M16 2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M8 2V6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M3 10H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Order by newest
+      </button>
+    </div>
+    <!-- bookmark -->
+    <div class="container">
+      <nav class="left-sidebar me-5">
+        <div class="container">
+          <div class="bookmark">
+            <h3>Bookmarks</h3>
+            <p class="bookmark-paragraph">If you don’t like to read, you haven’t found the right book</p>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div class="mt-5 container">
+        <!-- book list -->
+        <ul class="js-list"></ul>
+      </div>
+      <!-- Modal -->
+
+      <section class="modal2 hidden">
+        <div class="modal__box">
+          <div class="modal__header">
+            <h2 class="modal__heading">Python</h2>
+            <button class="modal__exit">
+              <img src="./img/exit.png" alt="exit img" width="15" height="15" />
+            </button>
+          </div>
+
+          <img class="modal__img" src="./img/download.png" alt="book img" width="229" height="300" />
+
+          <p class="modal__desc">
+            Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo
+            cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute
+            laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip
+            ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod
+            sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate
+            aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit
+            sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur
+            esse proident duis Lorem.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

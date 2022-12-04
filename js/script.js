@@ -12,11 +12,11 @@ let search = "Java";
 // logout
 let localToken = window.localStorage.getItem("token");
 if (!localToken) {
-  window.location.replace(index.html);
+  window.location.replace(home.html);
 }
 elLogoutBtn.addEventListener("click", () => {
   window.localStorage.removeItem("token");
-  window.location.replace("login.html");
+  window.location.replace("index.html");
 });
 // mode
 btnMode.addEventListener("click", () => {

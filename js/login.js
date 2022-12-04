@@ -22,7 +22,7 @@ elForm.addEventListener("submit", function (evt) {
       if (data?.token) {
         window.localStorage.setItem("token", data.token);
 
-        window.location.replace("index.html");
+        window.location.replace("home.html");
       } else {
         alert("please try again");
       }
