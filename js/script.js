@@ -6,6 +6,7 @@ const modalClose = document.querySelector(".modal__exit");
 const elModal = document.querySelector(".modal2");
 const elOverlay = document.querySelector(".overlay");
 const searchInput = findElement(".search-input");
+const sortBtn = findElement(".sort-btn");
 let elCounter = findElement(".counter");
 let search = "Java";
 //==========================================
@@ -72,19 +73,31 @@ searchInput.addEventListener("keyup", (e) => {
   }
 });
 
+//====================================
 const list = findElement(".js-list");
 async function getAllData() {
-  let response = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${search.toLocaleLowerCase()}+terms`
-  );
+  let response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search.toLowerCase()}+terms`);
   try {
     let result = await response.json();
     (elCounter.textContent = result.totalItems), "1";
-
-    renderBooks(result.items, list);
+    sortFunction(result.items, list);
+    // renderBooks(result.items, list);
   } catch (error) {
     alert(error.message);
   }
+}
+
+function sortFunction(arr = [], list) {
+  renderBooks(arr, list);
+  sortBtn.addEventListener("click", () => {
+    arr.sort((a, b) => {
+      if (a.volumeInfo.publishedDate > b.volumeInfo.publishedDate) {
+        return -1;
+      } else {
+        renderBooks(arr, list);
+      }
+    });
+  });
 }
 
 getAllData();
@@ -92,7 +105,8 @@ getAllData();
 function renderBooks(books = [], list) {
   list.innerHTML = "";
   books.forEach((book, i) => {
-    findElement(".counter").innerHTML = `${i + 1} `;
+    elCounter.innerHTML = `${i + 1}`;
+
     const elLi = createElement(
       "li",
       "card__item my-3 d-flex flex-wrap",
