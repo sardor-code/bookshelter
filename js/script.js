@@ -104,7 +104,7 @@ getAllData();
 
 function renderBooks(books = [], list) {
   list.innerHTML = "";
-  books.forEach((book, i) => {
+  books.slice(0, 9).forEach((book, i) => {
     elCounter.innerHTML = `${i + 1}`;
 
     const elLi = createElement(
